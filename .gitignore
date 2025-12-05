@@ -43,4 +43,6 @@ coverage
 *.pem
 *.log
 Thumbs.db
-.env.local
+
+# .gitignore
+.env*.local
