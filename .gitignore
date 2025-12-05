@@ -43,3 +43,4 @@ coverage
 *.pem
 *.log
 Thumbs.db
+.env.local
