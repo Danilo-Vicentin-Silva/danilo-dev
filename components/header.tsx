@@ -44,10 +44,18 @@ export function Header() {
             <LanguageToggle />
             <ThemeToggle />
             <div className="w-px h-5 bg-border mx-1" />
-            <Link href="https://github.com" target="_blank" className="text-foreground/80 hover:text-foreground p-2">
+            <Link
+              href="https://github.com/Danilo-Vicentin-Silva"
+              target="_blank"
+              className="text-foreground/80 hover:text-foreground p-2"
+            >
               <Github className="w-5 h-5" />
             </Link>
-            <Link href="https://linkedin.com" target="_blank" className="text-foreground/80 hover:text-foreground p-2">
+            <Link
+              href="https://www.linkedin.com/in/danilo-vicentin-da-silva-16a84022b/"
+              target="_blank"
+              className="text-foreground/80 hover:text-foreground p-2"
+            >
               <Linkedin className="w-5 h-5" />
             </Link>
           </div>
@@ -56,8 +64,17 @@ export function Header() {
           <div className="flex md:hidden items-center gap-2">
             <LanguageToggle />
             <ThemeToggle />
-            <Button variant="ghost" size="icon" className="text-foreground" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -76,10 +93,18 @@ export function Header() {
               </Link>
             ))}
             <div className="flex items-center gap-3 pt-2 border-t border-border">
-              <Link href="https://github.com" target="_blank" className="text-foreground/80 hover:text-foreground">
+              <Link
+                href="https://github.com"
+                target="_blank"
+                className="text-foreground/80 hover:text-foreground"
+              >
                 <Github className="w-5 h-5" />
               </Link>
-              <Link href="https://linkedin.com" target="_blank" className="text-foreground/80 hover:text-foreground">
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                className="text-foreground/80 hover:text-foreground"
+              >
                 <Linkedin className="w-5 h-5" />
               </Link>
             </div>

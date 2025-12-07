@@ -15,17 +15,17 @@ export function Contact() {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/danilo-vicentin-da-silva-16a84022b/",
       icon: Linkedin,
       username: "@danilo",
       color: "#0077b5",
     },
     {
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/Danilo-Vicentin-Silva",
       icon: Github,
       username: "@danilo",
-      color: "#333",
+      color: "#006ba4",
     },
     {
       name: t.nav.about === "Sobre" ? "Portfólio" : "Portfolio",

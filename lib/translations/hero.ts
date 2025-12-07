@@ -9,7 +9,7 @@ export const hero = {
       webDev: "Dev Web",
     },
     description:
-      "Estudante de Gestão da Tecnologia da Informação, apaixonado por",
+      "Estudante de Gestão da Tecnologia da Informação, com foco em",
     skills: {
       ai: "Inteligência Artificial",
       dataAnalysis: "Análise de Dados",
@@ -30,7 +30,7 @@ export const hero = {
       dataAnalysis: "Data Analysis",
       webDev: "Web Dev",
     },
-    description: "IT Management student, passionate about",
+    description: "IT Management student, interested in",
     skills: {
       ai: "Artificial Intelligence",
       dataAnalysis: "Data Analysis",
