@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AppProvider } from "@/contexts/app-context"
 import "./globals.css"
+import BackToTop from "@/components/back-to-top"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
@@ -93,7 +94,11 @@ export default function RootLayout({
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
@@ -103,15 +108,28 @@ export default function RootLayout({
               "@type": "Person",
               name: "Danilo",
               jobTitle: "Estagiário em Inteligência de Mercado",
-              description: "Desenvolvedor e Analista de Dados especializado em Power Platform",
-              knowsAbout: ["Power BI", "Power Apps", "Power Automate", "SQL", "DAX", "Next.js", "TypeScript"],
-              sameAs: ["https://linkedin.com/in/danilo", "https://github.com/danilo"],
+              description:
+                "Desenvolvedor e Analista de Dados especializado em Power Platform",
+              knowsAbout: [
+                "Power BI",
+                "Power Apps",
+                "Power Automate",
+                "SQL",
+                "DAX",
+                "Next.js",
+                "TypeScript",
+              ],
+              sameAs: [
+                "https://linkedin.com/in/danilo",
+                "https://github.com/danilo",
+              ],
             }),
           }}
         />
       </head>
       <body className="font-sans antialiased">
         <AppProvider>{children}</AppProvider>
+        <BackToTop />
         <Analytics />
       </body>
     </html>
