@@ -3,7 +3,14 @@
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, Github, ExternalLink, Play, Calendar, Folder } from "lucide-react"
+import {
+  ArrowLeft,
+  Github,
+  ExternalLink,
+  Play,
+  Calendar,
+  Folder,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { projects } from "@/lib/projects-data"
 import { useApp } from "@/contexts/app-context"
@@ -18,7 +25,9 @@ export default function ProjectPage() {
     return (
       <main className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground mb-4">Projeto não encontrado</h1>
+          <h1 className="text-2xl font-bold text-foreground mb-4">
+            Projeto não encontrado
+          </h1>
           <Link href="/#projetos" className="text-primary hover:underline">
             Voltar aos projetos
           </Link>
@@ -41,7 +50,13 @@ export default function ProjectPage() {
 
         {/* Project image */}
         <div className="relative h-64 md:h-96 bg-primary/30 rounded-2xl overflow-hidden mb-8">
-          <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" priority />
+          <Image
+            src={project.image || "/placeholder.svg"}
+            alt={project.title}
+            fill
+            className="object-cover"
+            priority
+          />
           <div className="absolute inset-0 flex items-center justify-center">
             <Folder className="w-16 h-16 text-primary/50" />
           </div>
@@ -55,7 +70,10 @@ export default function ProjectPage() {
                 {t.projects.featured}
               </span>
             )}
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">{project.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+              {t.projects.items[project.id as keyof typeof t.projects.items]
+                ?.title || project.title}
+            </h1>
             <div className="flex items-center gap-2 text-foreground/60 text-sm">
               <Calendar className="w-4 h-4" />
               {t.projects.createdAt} {project.createdAt}
@@ -77,7 +95,10 @@ export default function ProjectPage() {
               </Button>
             )}
             {project.links.website && (
-              <Button asChild className="bg-primary hover:bg-accent text-primary-foreground">
+              <Button
+                asChild
+                className="bg-primary hover:bg-accent text-primary-foreground"
+              >
                 <Link href={project.links.website} target="_blank">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   {t.projects.visitWebsite}
@@ -100,14 +121,22 @@ export default function ProjectPage() {
         </div>
 
         {/* Description */}
-        <p className="text-foreground/70 text-lg leading-relaxed mb-8">{project.longDescription}</p>
+        <p className="text-foreground/70 text-lg leading-relaxed mb-8">
+          {t.projects.items[project.id as keyof typeof t.projects.items]
+            ?.longDescription || project.longDescription}
+        </p>
 
         {/* Technologies */}
         <div>
-          <h2 className="text-foreground font-semibold text-lg mb-4">{t.projects.technologiesUsed}</h2>
+          <h2 className="text-foreground font-semibold text-lg mb-4">
+            {t.projects.technologiesUsed}
+          </h2>
           <div className="flex flex-wrap gap-3">
             {project.technologies.map((tech) => (
-              <span key={tech} className="bg-card border border-border text-foreground px-4 py-2 rounded-lg">
+              <span
+                key={tech}
+                className="bg-card border border-border text-foreground px-4 py-2 rounded-lg"
+              >
                 {tech}
               </span>
             ))}

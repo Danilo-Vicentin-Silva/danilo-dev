@@ -143,10 +143,12 @@ export function Projects() {
               {/* Project info */}
               <div className="p-6">
                 <h3 className="text-foreground font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
+                  {t.projects.items[project.id as keyof typeof t.projects.items]
+                    ?.title || project.title}
                 </h3>
                 <p className="text-foreground/60 text-sm mb-4 line-clamp-2">
-                  {project.description}
+                  {t.projects.items[project.id as keyof typeof t.projects.items]
+                    ?.description || project.description}
                 </p>
 
                 {/* Technologies */}
