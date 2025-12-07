@@ -1,5 +1,5 @@
 // lib/get-projects.ts
-import { sql } from "@vercel/postgres"
+import { sql } from "@neondatabase/serverless"
 
 // Defina a interface aqui ou importe de um arquivo de types
 export interface Project {
