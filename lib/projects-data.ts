@@ -32,6 +32,7 @@ export const projects: Project[] = [
       code: "https://github.com/Danilo-Vicentin-Silva/GameJam2025-GuaraByte-Protocolo-ODS.git",
       website:
         "https://github.com/Danilo-Vicentin-Silva/GameJam2025-GuaraByte-Protocolo-ODS.git",
+      demo: "https://www.youtube.com/embed/zm2dgu9QdHI?si=3skdUJDbC2yH7sm9",
     },
   },
   {
@@ -48,6 +49,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/os-7-pilares-wiki",
       website: "https://os-7-pilares-wiki.vercel.app",
+      demo: "https://www.youtube.com/embed/W_6QjdD7cEk?si=Ns4H4zBQPI7KR10N",
     },
   },
   {
@@ -64,6 +66,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/os-7-pilares",
       website: "https://danilo-vicentin-silva.github.io/os-7-pilares/",
+      demo: "https://www.youtube.com/embed/OOz8Jw_XxC8?si=K0yk4iEDbBkZeWvD",
     },
   },
   {
@@ -81,6 +84,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/landing-page-example",
       website: "https://landing-page-example-wine.vercel.app/",
+      demo: "https://www.youtube.com/embed/BjVJaCdmPxg?si=1c_YwTDIGx4BDB-z",
     },
   },
   {
@@ -97,6 +101,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/Data-Galaxy",
       website: "https://data-galaxy.vercel.app/",
+      demo: "https://www.youtube.com/embed/1pd2czSTis8?si=7ImOVcTt51DAvm0r",
     },
   },
   {
@@ -113,6 +118,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/RacingF1",
       website: "https://danilo-vicentin-silva.github.io/RacingF1/",
+      demo: "https://www.youtube.com/embed/d0Xqo_2e2Gg?si=E5iUKBdU2VI3AK1i",
     },
   },
   {
@@ -129,6 +135,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/Task-list",
       website: "https://danilotasklist.netlify.app/",
+      demo: "https://www.youtube.com/embed/yHyDs4zM680?si=7r9V6ssbnnJxvW7P",
     },
   },
   {
@@ -145,6 +152,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/landing-page-example",
       website: "https://landing-page-example-wine.vercel.app/",
+      demo: "https://www.youtube.com/embed/-7OX4wTwnnE?si=E0uC2b10axNUWN4E",
     },
   },
   {
@@ -162,6 +170,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/Cordel-Moderno",
       website: "https://danilo-vicentin-silva.github.io/Cordel-Moderno/",
+      demo: "https://www.youtube.com/embed/nwvz4tZiZkg?si=DGQple8VULWn_uf0",
     },
   },
   {
@@ -178,6 +187,7 @@ export const projects: Project[] = [
     links: {
       code: "https://github.com/Danilo-Vicentin-Silva/Site-Android",
       website: "https://danilo-vicentin-silva.github.io/Site-Android/",
+      demo: "https://www.youtube.com/embed/Riixv2Zz16Y?si=HSY4xcRdPa3zaLWz",
     },
   },
 ]

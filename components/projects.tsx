@@ -1,9 +1,16 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Search, Eye, ExternalLink, Github } from "lucide-react"
+import {
+  Search,
+  Eye,
+  ExternalLink,
+  Github,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react"
 import { projects, categories } from "@/lib/projects-data"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { useApp } from "@/contexts/app-context"
@@ -11,6 +18,7 @@ import { useApp } from "@/contexts/app-context"
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState("Todos")
   const [searchQuery, setSearchQuery] = useState("")
+  const [displayCount, setDisplayCount] = useState(6)
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
   const { ref: filtersRef, isVisible: filtersVisible } = useScrollAnimation()
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation()
@@ -20,12 +28,19 @@ export function Projects() {
     const matchesCategory =
       activeCategory === "Destaque" || activeCategory === "Featured"
         ? project.featured
-        : activeCategory === "Todos" || activeCategory === "All" || project.category.includes(activeCategory)
+        : activeCategory === "Todos" ||
+          activeCategory === "All" ||
+          project.category.includes(activeCategory)
     const matchesSearch =
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description.toLowerCase().includes(searchQuery.toLowerCase())
     return matchesCategory && matchesSearch
   })
+
+  // Reset displayCount quando filtros mudam
+  useEffect(() => {
+    setDisplayCount(6)
+  }, [activeCategory, searchQuery])
 
   const translatedCategories = categories.map((cat) => {
     if (language === "en") {
@@ -42,19 +57,29 @@ export function Projects() {
         <div
           ref={headerRef}
           className={`text-center mb-12 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-wider">{t.projects.sectionTitle}</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">{t.projects.title}</h2>
-          <p className="text-foreground/60 mt-4 max-w-2xl mx-auto">{t.projects.description}</p>
+          <span className="text-primary text-sm font-medium uppercase tracking-wider">
+            {t.projects.sectionTitle}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+            {t.projects.title}
+          </h2>
+          <p className="text-foreground/60 mt-4 max-w-2xl mx-auto">
+            {t.projects.description}
+          </p>
         </div>
 
         {/* Search bar */}
         <div
           ref={filtersRef}
           className={`transition-all duration-700 delay-100 ${
-            filtersVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            filtersVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
           <div className="relative max-w-md mx-auto mb-8">
@@ -88,12 +113,14 @@ export function Projects() {
 
         {/* Projects grid */}
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.slice(0, displayCount).map((project, index) => (
             <Link
               key={project.id}
               href={`/projeto/${project.id}`}
               className={`group bg-card/50 border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 ${
-                gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                gridVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
@@ -118,7 +145,9 @@ export function Projects() {
                 <h3 className="text-foreground font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-foreground/60 text-sm mb-4 line-clamp-2">{project.description}</p>
+                <p className="text-foreground/60 text-sm mb-4 line-clamp-2">
+                  {project.description}
+                </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -142,6 +171,30 @@ export function Projects() {
             </Link>
           ))}
         </div>
+
+        {/* Load more button */}
+        {filteredProjects.length > 6 && (
+          <div className="flex justify-center gap-4 mt-12">
+            {displayCount < filteredProjects.length && (
+              <button
+                onClick={() => setDisplayCount((prev) => prev + 6)}
+                className="flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
+              >
+                <span>{language === "en" ? "Load More" : "Carregar Mais"}</span>
+                <ChevronDown className="w-5 h-5" />
+              </button>
+            )}
+            {displayCount > 6 && (
+              <button
+                onClick={() => setDisplayCount(6)}
+                className="flex items-center gap-2 px-8 py-3 bg-card/50 text-foreground border border-border rounded-full font-medium hover:bg-card hover:border-primary/50 transition-all duration-300"
+              >
+                <span>{language === "en" ? "Collapse" : "Contrair"}</span>
+                <ChevronUp className="w-5 h-5" />
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </section>
   )
