@@ -1,8 +1,14 @@
 "use client"
 
 import type React from "react"
-import { createContext, useContext, useState, useEffect, useCallback } from "react"
-import { type Language, getTranslation } from "@/lib/translations"
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react"
+import { type Language, getTranslation } from "@/lib/translations/index"
 
 type Theme = "light" | "dark"
 
@@ -75,7 +81,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     )
   }
 
-  return <AppContext.Provider value={{ theme, toggleTheme, language, setLanguage, t }}>{children}</AppContext.Provider>
+  return (
+    <AppContext.Provider
+      value={{ theme, toggleTheme, language, setLanguage, t }}
+    >
+      {children}
+    </AppContext.Provider>
+  )
 }
 
 export function useApp() {
