@@ -15,7 +15,7 @@ export function Footer() {
             &copy; {currentYear} Danilo. {t.footer.rights}
           </p>
           <p className="text-foreground/60 text-sm flex items-center gap-1">
-            {t.footer.madeWith} <Heart className="w-4 h-4 text-red-500 fill-current" /> {t.footer.andCode}
+            {t.footer.madeWith}
           </p>
         </div>
       </div>

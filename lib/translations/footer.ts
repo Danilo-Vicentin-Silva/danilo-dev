@@ -1,12 +1,10 @@
 export const footer = {
   pt: {
     rights: "Todos os direitos reservados.",
-    madeWith: "Feito com",
-    andCode: "e muito código",
+    madeWith: "Tudo sempre parece impossível até que seja feito.",
   },
   en: {
     rights: "All rights reserved.",
-    madeWith: "Made with",
-    andCode: "and lots of code",
+    madeWith: "Everything always seems impossible until it is done.",
   },
 }

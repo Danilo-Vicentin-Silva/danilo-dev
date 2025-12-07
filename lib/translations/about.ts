@@ -3,7 +3,7 @@ export const about = {
     sectionTitle: "Sobre Mim",
     title: "Quem sou eu",
     description:
-      "Trabalho com foco em inteligência de mercado na área de compras, unindo",
+      "Trabalho com foco em desenvolvimento de soluções, desde do low-code ao hard-code para automação de processos e digitalização de processos usando",
     highlights: {
       technology: "tecnologia",
       analysis: "análise",
@@ -36,7 +36,7 @@ export const about = {
     sectionTitle: "About Me",
     title: "Who am I",
     description:
-      "I work focused on market intelligence in the procurement area, combining",
+      "I work focusing on developing solutions, from low-code to hard-code for process automation and digitization using",
     highlights: {
       technology: "technology",
       analysis: "analysis",

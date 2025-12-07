@@ -14,7 +14,7 @@ export function Experience() {
     {
       title: language === "pt" ? "Estagiário em Inteligência de Mercado" : "Market Intelligence Intern",
       company: language === "pt" ? "Empresa" : "Company",
-      period: language === "pt" ? "dez 2023 - Presente" : "Dec 2023 - Present",
+      period: language === "pt" ? "dez 2024 - Presente" : "Dec 2024 - Present",
       description:
         language === "pt"
           ? "Desenvolvimento de soluções com Power Apps, Power Automate e Power BI para automação de processos usando Microsoft Lists, SharePoint e ferramentas Microsoft 365."
@@ -25,13 +25,16 @@ export function Experience() {
 
   const academicEducation = [
     {
-      title: language === "pt" ? "Gestão da Tecnologia da Informação" : "IT Management",
+      title:
+        language === "pt"
+          ? "Gestão da Tecnologia da Informação"
+          : "IT Management",
       institution: language === "pt" ? "Instituição" : "Institution",
-      period: language === "pt" ? "fev 2022 - Presente" : "Feb 2022 - Present",
+      period: language === "pt" ? "fev 2024 - Presente" : "Feb 2024 - Present",
       description:
         language === "pt"
-          ? "Foco em Inteligência Artificial, Análise de Dados e Automação de Processos."
-          : "Focus on Artificial Intelligence, Data Analysis and Process Automation.",
+          ? "O curso aborda disciplinas das áreas de informática e gestão, que têm como base a matemática. Dentro de computação, o estudante aprende linguagem de programação, desenvolvimento de softwares e implementação de sistema de banco de dados, entre outros. Já no campo gerencial, estuda administração, contabilidade, finanças, economia, negócios, marketing, gestão de pessoas e gestão da produção, por exemplo."
+          : "The course covers disciplines in the areas of computer science and management, which are based on mathematics. In computer science, the student learns programming languages, software development, and database system implementation, among others. In the management field, they study administration, accounting, finance, economics, business, marketing, people management, and production management, for example.",
       current: true,
     },
   ]
