@@ -83,6 +83,13 @@ export const projects = {
         longDescription:
           "Projeto desenvolvido para praticar HTML e CSS, criando um site temático sobre a história do Android.",
       },
+      "grid-fit-driver-performance": {
+        title: "GridFit",
+        description:
+          "Tracker de treinos pensado para pilotos de kart e entusiastas de performance.",
+        longDescription:
+          "Aplicação PWA para rotinas de treino de pilotos, com monitoramento semanal, biblioteca de treinos categorizada, player com cronômetro, perfil de usuário e autenticação via Supabase.",
+      },
     },
   },
   en: {
@@ -166,6 +173,13 @@ export const projects = {
         description: "Replica or themed site about the Android mascot.",
         longDescription:
           "Project developed to practice HTML and CSS, creating a themed site about the history of Android.",
+      },
+      "grid-fit-driver-performance": {
+        title: "GridFit",
+        description:
+          "Training tracker designed for kart drivers and performance enthusiasts.",
+        longDescription:
+          "PWA for drivers' training routines, featuring weekly progress monitoring, categorized training library, training player with stopwatch, user profiles and Supabase authentication.",
       },
     },
   },

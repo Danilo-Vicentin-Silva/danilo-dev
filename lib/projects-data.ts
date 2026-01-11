@@ -190,6 +190,24 @@ export const projects: Project[] = [
       demo: "https://www.youtube.com/embed/Riixv2Zz16Y?si=HSY4xcRdPa3zaLWz",
     },
   },
+  {
+    id: "grid-fit-driver-performance",
+    title: "GridFit",
+    description:
+      "PWA para rotinas de treino de pilotos de kart e entusiastas de performance.",
+    longDescription:
+      "Aplicação Web (PWA) para rotinas de treino de pilotos, com monitoramento semanal, biblioteca de treinos, player com cronômetro, perfil de usuário e autenticação via Supabase.",
+    image: "/images/gridfit-cover.webp",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Supabase"],
+    category: ["Todos", "Next.js", "Front-end"],
+    featured: true,
+    createdAt: "2026",
+    links: {
+      code: "https://github.com/Danilo-Vicentin-Silva/grid-fit-driver-performance",
+      website: "https://grid-fit-driver-performance.vercel.app/",
+      demo: "https://youtu.be/gK2ES8fSKIM?si=KkyXFy4-2233wLdN",
+    },
+  },
 ]
 
 export const categories = [
