@@ -6,6 +6,7 @@ import { Menu, X, Github, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageToggle } from "@/components/language-toggle"
+import { ClientOnly } from "@/components/client-only"
 import { useApp } from "@/contexts/app-context"
 import Image from "next/image"
 
@@ -41,8 +42,10 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-2">
-            <LanguageToggle />
-            <ThemeToggle />
+            <ClientOnly>
+              <LanguageToggle />
+              <ThemeToggle />
+            </ClientOnly>
             <div className="w-px h-5 bg-border mx-1" />
             <Link
               href="https://github.com/Danilo-Vicentin-Silva"
@@ -62,8 +65,10 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <LanguageToggle />
-            <ThemeToggle />
+            <ClientOnly>
+              <LanguageToggle />
+              <ThemeToggle />
+            </ClientOnly>
             <Button
               variant="ghost"
               size="icon"

@@ -18,6 +18,7 @@ interface AppContextType {
   language: Language
   setLanguage: (lang: Language) => void
   t: ReturnType<typeof getTranslation>
+  mounted: boolean
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined)
@@ -64,29 +65,18 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   const t = getTranslation(language)
 
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return (
-      <AppContext.Provider
-        value={{
-          theme: "dark",
-          toggleTheme: () => {},
-          language: "pt",
-          setLanguage: () => {},
-          t: getTranslation("pt"),
-        }}
-      >
-        {children}
-      </AppContext.Provider>
-    )
+  // Always provide consistent context value
+  const contextValue: AppContextType = {
+    theme,
+    toggleTheme,
+    language,
+    setLanguage,
+    t,
+    mounted,
   }
 
   return (
-    <AppContext.Provider
-      value={{ theme, toggleTheme, language, setLanguage, t }}
-    >
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>
   )
 }
 
