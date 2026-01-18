@@ -18,11 +18,16 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Workflow, Database, FileSpreadsheet, Github } from "lucide-react"
 import {
-  SiPowerbi,
-  SiPowerapps,
-  SiMicrosoftexcel,
+  Workflow,
+  Database,
+  FileSpreadsheet,
+  Github,
+  BarChart3,
+  AppWindow,
+  Sheet,
+} from "lucide-react"
+import {
   SiJavascript,
   SiTypescript,
   SiNextdotjs,
@@ -109,12 +114,12 @@ function buildSkillCategories(t: ReturnType<typeof useApp>["t"]) {
       skills: [
         {
           name: t.skills.items.powerBI.name,
-          icon: SiPowerbi,
+          icon: BarChart3,
           description: t.skills.items.powerBI.description,
         },
         {
           name: t.skills.items.powerApps.name,
-          icon: SiPowerapps,
+          icon: AppWindow,
           description: t.skills.items.powerApps.description,
         },
         {
@@ -146,7 +151,7 @@ function buildSkillCategories(t: ReturnType<typeof useApp>["t"]) {
       skills: [
         {
           name: t.skills.items.excel.name,
-          icon: SiMicrosoftexcel,
+          icon: Sheet,
           description: t.skills.items.excel.description,
         },
         {
